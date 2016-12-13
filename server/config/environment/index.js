@@ -28,7 +28,6 @@ function requiredProcessEnv(name) {
 
 // All configurations will extend these options
 // ============================================
-console.log(process.env.PORT);
 var all = {
   env: process.env.NODE_ENV,
 
@@ -36,7 +35,7 @@ var all = {
   root: path.normalize(__dirname + '/../../..'),
 
   // Server port
-  port: 8080,
+  port: process.env.PORT || 8080,
 
   // Server IP
   ip: process.env.IP || '0.0.0.0',
